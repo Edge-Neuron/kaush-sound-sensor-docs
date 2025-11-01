@@ -95,6 +95,9 @@ extra:
       link: https://www.facebook.com/profile.php?id=61582047675688
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/kaush_sound
+  analytics:
+    provider: google
+    property: G-2YE677NET0
 
 extra_css:
   - stylesheets/extra.css
