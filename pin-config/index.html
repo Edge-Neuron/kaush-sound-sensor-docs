@@ -1,0 +1,2066 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete guide for professional audio acquisition sensor">
+      
+      
+        <meta name="author" content="Edge Neuron">
+      
+      
+        <link rel="canonical" href="https://yourusername.github.io/kaush-sound-sensor-docs/pin-config/">
+      
+      
+        <link rel="prev" href="../getting-started/">
+      
+      
+        <link rel="next" href="../troubleshooting/">
+      
+      
+      <link rel="icon" href="../images/logo/kalpruh.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Pin Configuration - Kaush Sound Sensor v1.0 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-2YE677NET0"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-2YE677NET0",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-2YE677NET0",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pin-configuration-wiring" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Kaush Sound Sensor v1.0 Documentation" class="md-header__button md-logo" aria-label="Kaush Sound Sensor v1.0 Documentation" data-md-component="logo">
+      
+  <img src="../images/logo/kalpruh.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kaush Sound Sensor v1.0 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pin Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="light-green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://docs.kalpruh.com" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Edge-Neuron/kaush-sound-sensor-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../hardware-specs/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Hardware Specifications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pin Configuration
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../troubleshooting/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Troubleshooting
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Downloads
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../support/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Support
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Kaush Sound Sensor v1.0 Documentation" class="md-nav__button md-logo" aria-label="Kaush Sound Sensor v1.0 Documentation" data-md-component="logo">
+      
+  <img src="../images/logo/kalpruh.png" alt="logo">
+
+    </a>
+    Kaush Sound Sensor v1.0 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://docs.kalpruh.com" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Edge-Neuron/kaush-sound-sensor-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hardware Specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Pin Configuration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pin Configuration
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pin-layout-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin Layout Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin Definitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pin Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Pins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Pins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vcc-positive-power-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      VCC (Positive Power Supply)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnd-ground-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      GND (Ground Reference)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-output-pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal Output Pins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Output Pins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtered_out-rc-filtered-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      FILTERED_OUT (RC Filtered Output)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw_out-unfiltered-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAW_OUT (Unfiltered Output)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_amp-pre-amplification-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_AMP (Pre-Amplification Signal)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-specific-wiring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform-Specific Wiring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform-Specific Wiring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arduino-nano-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino Nano Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arduino Nano Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp32-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP32 Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ESP32 Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP32 Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp8266-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP8266 Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi-enabled-code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      WiFi-Enabled Code Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raspberry Pi Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspberry Pi Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-mcp3008-adc-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using MCP3008 ADC (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Code Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-wiring-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Wiring Configurations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Wiring Configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-sensor-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Sensor Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Sensor Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stereo-configuration-2-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stereo Configuration (2 Sensors)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-sensor-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      4-Sensor Array
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-analysis-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal Analysis Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Analysis Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spectrum-analyzer-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spectrum Analyzer Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spectrum Analyzer Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-time-fft-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-Time FFT Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCB Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-pcb-mounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct PCB Mounting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct PCB Mounting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schematic-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schematic Symbol
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing and Validation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing and Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connection-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Verification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-quality-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal Quality Assessment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Quality Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceptable-signal-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceptable Signal Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-wiring-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Wiring Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Wiring Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-signal-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      No Signal Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noisy-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Noisy Signals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incorrect-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incorrect Baseline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Reference Card
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Downloads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pin-layout-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin Layout Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin Definitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pin Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Pins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Pins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vcc-positive-power-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      VCC (Positive Power Supply)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnd-ground-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      GND (Ground Reference)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-output-pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal Output Pins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Output Pins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtered_out-rc-filtered-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      FILTERED_OUT (RC Filtered Output)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw_out-unfiltered-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAW_OUT (Unfiltered Output)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_amp-pre-amplification-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_AMP (Pre-Amplification Signal)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-specific-wiring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform-Specific Wiring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform-Specific Wiring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arduino-nano-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino Nano Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arduino Nano Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp32-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP32 Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ESP32 Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP32 Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp8266-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP8266 Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi-enabled-code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      WiFi-Enabled Code Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raspberry Pi Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspberry Pi Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-mcp3008-adc-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using MCP3008 ADC (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Code Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-wiring-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Wiring Configurations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Wiring Configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-sensor-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Sensor Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Sensor Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stereo-configuration-2-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stereo Configuration (2 Sensors)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-sensor-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      4-Sensor Array
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-analysis-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal Analysis Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Analysis Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spectrum-analyzer-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spectrum Analyzer Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spectrum Analyzer Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-time-fft-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-Time FFT Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCB Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-pcb-mounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct PCB Mounting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct PCB Mounting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schematic-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schematic Symbol
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing and Validation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing and Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connection-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Verification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-quality-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal Quality Assessment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Quality Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceptable-signal-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceptable Signal Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-wiring-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Wiring Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Wiring Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-signal-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      No Signal Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noisy-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Noisy Signals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incorrect-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incorrect Baseline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Reference Card
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="pin-configuration-wiring">Pin Configuration &amp; Wiring<a class="headerlink" href="#pin-configuration-wiring" title="Permanent link">&para;</a></h1>
+<h2 id="pin-layout-overview">Pin Layout Overview<a class="headerlink" href="#pin-layout-overview" title="Permanent link">&para;</a></h2>
+<p>The Kaush Sound Sensor v1.0 features a compact 8-pin interface that provides maximum flexibility for different applications and microcontroller platforms.</p>
+<p><img alt="Detailed Pin Layout" class="small center" src="../images/hardware/pin-layout.png" /></p>
+<p><em>Detailed pin layout with electrical specifications</em></p>
+<h2 id="pin-definitions">Pin Definitions<a class="headerlink" href="#pin-definitions" title="Permanent link">&para;</a></h2>
+<h3 id="power-pins">Power Pins<a class="headerlink" href="#power-pins" title="Permanent link">&para;</a></h3>
+<h4 id="vcc-positive-power-supply">VCC (Positive Power Supply)<a class="headerlink" href="#vcc-positive-power-supply" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Voltage Range</strong>: 4V to 12V DC</li>
+<li><strong>Current Draw</strong>: 4mA quiescent, 15mA peak</li>
+<li><strong>Recommended</strong>: 5V (Arduino) or 9V (battery)</li>
+<li><strong>Protection</strong>: ⚠️ Not Reverse Polarity Protected</li>
+<li><strong>Connection</strong>: Two power connection pins provided</li>
+</ul>
+<h4 id="gnd-ground-reference">GND (Ground Reference)<a class="headerlink" href="#gnd-ground-reference" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Function</strong>: 0V reference and return path</li>
+<li><strong>Connection</strong>: Must connect to microcontroller ground</li>
+<li><strong>Important</strong>: Single ground point recommended</li>
+</ul>
+<h3 id="signal-output-pins">Signal Output Pins<a class="headerlink" href="#signal-output-pins" title="Permanent link">&para;</a></h3>
+<h4 id="filtered_out-rc-filtered-output">FILTERED_OUT (RC Filtered Output)<a class="headerlink" href="#filtered_out-rc-filtered-output" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Signal Type</strong>: Analog, AC-coupled</li>
+<li><strong>Baseline</strong>: VCC/2 (Half supply voltage)</li>
+<li><strong>Amplitude</strong>: 0.5V to 3V peak-to-peak</li>
+<li><strong>Bandwidth</strong>: ~20Hz to 10kHz (-3dB)</li>
+<li><strong>Impedance</strong>: &lt;1kΩ output impedance</li>
+<li><strong>Best For</strong>: General audio processing, speech recognition</li>
+</ul>
+<h4 id="raw_out-unfiltered-output">RAW_OUT (Unfiltered Output)<a class="headerlink" href="#raw_out-unfiltered-output" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Signal Type</strong>: Analog, full bandwidth</li>
+<li><strong>Baseline</strong>: VCC/2</li>
+<li><strong>Amplitude</strong>: 0.5V to 3V peak-to-peak</li>
+<li><strong>Bandwidth</strong>: DC to 20kHz</li>
+<li><strong>Impedance</strong>: &lt;500Ω output impedance</li>
+<li><strong>Best For</strong>: Maximum signal fidelity, custom filtering</li>
+</ul>
+<h4 id="pre_amp-pre-amplification-signal">PRE_AMP (Pre-Amplification Signal)<a class="headerlink" href="#pre_amp-pre-amplification-signal" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Signal Type</strong>: Analog, low amplitude</li>
+<li><strong>Baseline</strong>: VCC/2</li>
+<li><strong>Amplitude</strong>: 10mV to 200mV peak-to-peak</li>
+<li><strong>Gain</strong>: No LM386 amplification applied</li>
+<li><strong>Best For</strong>: Low-noise applications, external amplification</li>
+</ul>
+<h2 id="platform-specific-wiring">Platform-Specific Wiring<a class="headerlink" href="#platform-specific-wiring" title="Permanent link">&para;</a></h2>
+<h3 id="arduino-nano-configuration">Arduino Nano Configuration<a class="headerlink" href="#arduino-nano-configuration" title="Permanent link">&para;</a></h3>
+<p><img alt="Arduino Nano Wiring" class="medium" src="../images/connections/arduino-nano-complete.png" />
+<em>Complete Arduino Nano connection diagram</em></p>
+<h4 id="standard-connection">Standard Connection<a class="headerlink" href="#standard-connection" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>Kaush Sensor    →    Arduino Nano
+VCC             →    5V
+GND             →    GND
+FILTERED_OUT    →    A0
+RAW_OUT         →    A1 (optional)
+PRE_AMP         →    A2 (optional)
+</code></pre></div>
+<h4 id="code-example">Code Example<a class="headerlink" href="#code-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Pin definitions</span>
+<span class="cp">#define FILTERED_PIN A0</span>
+<span class="cp">#define RAW_PIN A1</span>
+<span class="cp">#define PREAMP_PIN A2</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Analog pins are input by default</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">filtered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">FILTERED_PIN</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">RAW_PIN</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">preamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">PREAMP_PIN</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Filtered: &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">filtered</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; Raw: &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">raw</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; PreAmp: &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">preamp</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1ms = 1kHz sampling</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="esp32-configuration">ESP32 Configuration<a class="headerlink" href="#esp32-configuration" title="Permanent link">&para;</a></h3>
+<p><img alt="ESP32 Wiring" class="medium" src="../images/connections/esp32-complete.png" />
+<em>ESP32 wiring with voltage considerations</em></p>
+<h4 id="esp32-connection">ESP32 Connection<a class="headerlink" href="#esp32-connection" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>Kaush Sensor    →    ESP32
+VCC             →    5V
+GND             →    GND
+FILTERED_OUT    →    36
+</code></pre></div>
+<h4 id="esp8266-connection">ESP8266 Connection<a class="headerlink" href="#esp8266-connection" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>Kaush Sensor    →    ESP8266
+VCC             →    3V3(3.3V)
+GND             →    GND
+FILTERED_OUT    →    A0
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Voltage Warning</p>
+<p>ESP8266 analog input is 0-1V only! Use voltage divider for 3.3V sensor output:</p>
+</div>
+<h4 id="wifi-enabled-code-example">WiFi-Enabled Code Example<a class="headerlink" href="#wifi-enabled-code-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ESP8266WiFi.h&gt;</span>
+
+<span class="cp">#define SENSOR_PIN A0</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ssid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;your_wifi_name&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;your_password&quot;</span><span class="p">;</span>
+
+<span class="n">WiFiServer</span><span class="w"> </span><span class="nf">server</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="w">  </span><span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="w">  </span><span class="n">server</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">sensorValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR_PIN</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Scale from 1024 to compensate for voltage divider</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">actualVoltage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">sensorValue</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1024.0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.67</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">WiFiClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">server</span><span class="p">.</span><span class="n">available</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s">Content-Type: text/plain</span><span class="se">\r\n\r\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Sound Level: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">actualVoltage</span><span class="p">);</span>
+<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="raspberry-pi-configuration">Raspberry Pi Configuration<a class="headerlink" href="#raspberry-pi-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="using-mcp3008-adc-recommended">Using MCP3008 ADC (Recommended)<a class="headerlink" href="#using-mcp3008-adc-recommended" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>Kaush Sensor    →    MCP3008 ADC    →    Raspberry Pi
+VCC             →    VDD (3.3V)     →    3.3V (Pin 1)
+GND             →    VSS/AGND       →    GND (Pin 6)
+FILTERED_OUT    →    CH0            →    
+                     SCLK           →    GPIO 11 (Pin 23)
+                     MOSI           →    GPIO 10 (Pin 19)  
+                     MISO           →    GPIO 9 (Pin 21)
+                     CS             →    GPIO 8 (Pin 24)
+</code></pre></div>
+<h4 id="python-code-example">Python Code Example<a class="headerlink" href="#python-code-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">spidev</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1"># Setup SPI for MCP3008</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">spidev</span><span class="o">.</span><span class="n">SpiDev</span><span class="p">()</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Bus 0, Device 0</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">max_speed_hz</span> <span class="o">=</span> <span class="mi">1350000</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">read_adc</span><span class="p">(</span><span class="n">channel</span><span class="p">):</span>
+    <span class="c1"># MCP3008 protocol</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">spi</span><span class="o">.</span><span class="n">xfer2</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span> <span class="o">+</span> <span class="n">channel</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">adc_out</span> <span class="o">=</span> <span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">adc_out</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">sensor_value</span> <span class="o">=</span> <span class="n">read_adc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Channel 0</span>
+        <span class="n">voltage</span> <span class="o">=</span> <span class="p">(</span><span class="n">sensor_value</span> <span class="o">/</span> <span class="mf">1023.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">3.3</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sensor: </span><span class="si">{</span><span class="n">sensor_value</span><span class="si">:</span><span class="s2">4d</span><span class="si">}</span><span class="s2"> Voltage: </span><span class="si">{</span><span class="n">voltage</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">V&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="n">spi</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="advanced-wiring-configurations">Advanced Wiring Configurations<a class="headerlink" href="#advanced-wiring-configurations" title="Permanent link">&para;</a></h2>
+<h3 id="multi-sensor-setup">Multi-Sensor Setup<a class="headerlink" href="#multi-sensor-setup" title="Permanent link">&para;</a></h3>
+<h4 id="stereo-configuration-2-sensors">Stereo Configuration (2 Sensors)<a class="headerlink" href="#stereo-configuration-2-sensors" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>Sensor 1 (Left):
+VCC → 5V (shared)
+GND → GND (shared)  
+FILTERED_OUT → A0
+
+Sensor 2 (Right):
+VCC → 5V (shared)
+GND → GND (shared)
+FILTERED_OUT → A1
+</code></pre></div>
+<h4 id="4-sensor-array">4-Sensor Array<a class="headerlink" href="#4-sensor-array" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="cp">#define SENSOR_N A0  </span><span class="c1">// North</span>
+<span class="cp">#define SENSOR_S A1  </span><span class="c1">// South  </span>
+<span class="cp">#define SENSOR_E A2  </span><span class="c1">// East</span>
+<span class="cp">#define SENSOR_W A3  </span><span class="c1">// West</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">north</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR_N</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">south</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR_S</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">east</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR_E</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">west</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR_W</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Calculate sound direction</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">vertical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">north</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">south</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">north</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">south</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">horizontal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">east</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">west</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">east</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">west</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Direction - V: &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">vertical</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; H: &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">horizontal</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="signal-analysis-connections">Signal Analysis Connections<a class="headerlink" href="#signal-analysis-connections" title="Permanent link">&para;</a></h2>
+<h3 id="spectrum-analyzer-setup">Spectrum Analyzer Setup<a class="headerlink" href="#spectrum-analyzer-setup" title="Permanent link">&para;</a></h3>
+<h4 id="real-time-fft-monitoring">Real-Time FFT Monitoring<a class="headerlink" href="#real-time-fft-monitoring" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;arduinoFFT.h&quot;</span>
+
+<span class="cp">#define SAMPLES 256</span>
+<span class="cp">#define SAMPLING_FREQUENCY 2000</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">vReal</span><span class="p">[</span><span class="n">SAMPLES</span><span class="p">];</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">vImag</span><span class="p">[</span><span class="n">SAMPLES</span><span class="p">];</span>
+<span class="n">ArduinoFFT</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FFT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArduinoFFT</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">vReal</span><span class="p">,</span><span class="w"> </span><span class="n">vImag</span><span class="p">,</span><span class="w"> </span><span class="n">SAMPLES</span><span class="p">,</span><span class="w"> </span><span class="n">SAMPLING_FREQUENCY</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Collect samples</span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">SAMPLES</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vReal</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vImag</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2kHz sampling</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Compute FFT</span>
+<span class="w">  </span><span class="n">FFT</span><span class="p">.</span><span class="n">windowing</span><span class="p">(</span><span class="n">FFT_WIN_TYP_HAMMING</span><span class="p">,</span><span class="w"> </span><span class="n">FFT_FORWARD</span><span class="p">);</span>
+<span class="w">  </span><span class="n">FFT</span><span class="p">.</span><span class="n">compute</span><span class="p">(</span><span class="n">FFT_FORWARD</span><span class="p">);</span>
+<span class="w">  </span><span class="n">FFT</span><span class="p">.</span><span class="n">complexToMagnitude</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// Find peak frequency</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">peak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FFT</span><span class="p">.</span><span class="n">majorPeak</span><span class="p">();</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Peak Frequency: &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">peak</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="pcb-integration">PCB Integration<a class="headerlink" href="#pcb-integration" title="Permanent link">&para;</a></h2>
+<h3 id="direct-pcb-mounting">Direct PCB Mounting<a class="headerlink" href="#direct-pcb-mounting" title="Permanent link">&para;</a></h3>
+<h4 id="design-considerations">Design Considerations<a class="headerlink" href="#design-considerations" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Ground Plane</strong>: Continuous ground under sensor</li>
+<li><strong>Power Filtering</strong>: Local bypass capacitors (0.1µF, 10µF)</li>
+<li><strong>Trace Width</strong>: Minimum 0.2mm for signals, 0.4mm for power</li>
+<li><strong>Keepout</strong>: Avoid switching signals near analog traces</li>
+</ul>
+<h4 id="schematic-symbol">Schematic Symbol<a class="headerlink" href="#schematic-symbol" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>     Kaush_Sound_Sensor_v1.0
+    ┌─────────────────────────┐
+VCC │1                      5 │ PRE_AMP
+GND │2                      4 │ RAW_OUT  
+    │3                      3 │ FILTERED_OUT
+    └─────────────────────────┘
+</code></pre></div>
+<h2 id="testing-and-validation">Testing and Validation<a class="headerlink" href="#testing-and-validation" title="Permanent link">&para;</a></h2>
+<h3 id="connection-verification">Connection Verification<a class="headerlink" href="#connection-verification" title="Permanent link">&para;</a></h3>
+<h4 id="step-by-step-verification">Step-by-Step Verification<a class="headerlink" href="#step-by-step-verification" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Power Test</strong>: Measure VCC to GND voltage</li>
+<li><strong>Continuity</strong>: Verify all signal paths</li>
+<li><strong>Baseline Check</strong>: Measure outputs with no sound</li>
+<li><strong>Signal Test</strong>: Verify signal changes with audio input</li>
+<li><strong>Noise Check</strong>: Monitor for electrical interference</li>
+</ol>
+<h3 id="signal-quality-assessment">Signal Quality Assessment<a class="headerlink" href="#signal-quality-assessment" title="Permanent link">&para;</a></h3>
+<h4 id="acceptable-signal-parameters">Acceptable Signal Parameters<a class="headerlink" href="#acceptable-signal-parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Baseline Stability</strong>: ±100mV drift maximum</li>
+<li><strong>Signal-to-Noise Ratio</strong>: &gt;40dB</li>
+<li><strong>Frequency Response</strong>: Flat within ±3dB (100Hz-3kHz)</li>
+<li><strong>Distortion</strong>: &lt;5% THD at normal levels</li>
+</ul>
+<h2 id="troubleshooting-wiring-issues">Troubleshooting Wiring Issues<a class="headerlink" href="#troubleshooting-wiring-issues" title="Permanent link">&para;</a></h2>
+<h3 id="common-problems">Common Problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
+<h4 id="no-signal-output">No Signal Output<a class="headerlink" href="#no-signal-output" title="Permanent link">&para;</a></h4>
+<p><strong>Check List:</strong></p>
+<ul>
+<li>
+<p>✅ Power voltage within 4-12V range</p>
+</li>
+<li>
+<p>✅ Ground connections secure</p>
+</li>
+<li>
+<p>✅ Analog pin configured correctly</p>
+</li>
+<li>
+<p>✅ Potentiometers not at minimum</p>
+</li>
+</ul>
+<h4 id="noisy-signals">Noisy Signals<a class="headerlink" href="#noisy-signals" title="Permanent link">&para;</a></h4>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>
+<p>Use shielded cables for long connections</p>
+</li>
+<li>
+<p>Add ground plane under sensor</p>
+</li>
+<li>
+<p>Separate analog and digital grounds</p>
+</li>
+<li>
+<p>Filter power supply with capacitors</p>
+</li>
+</ul>
+<h4 id="incorrect-baseline">Incorrect Baseline<a class="headerlink" href="#incorrect-baseline" title="Permanent link">&para;</a></h4>
+<p><strong>Causes &amp; Fixes:</strong></p>
+<ul>
+<li>
+<p>Wrong power voltage → Check with multimeter</p>
+</li>
+<li>
+<p>Poor ground connection → Verify continuity</p>
+</li>
+<li>
+<p>Test with another Kaush unit</p>
+</li>
+</ul>
+<h2 id="quick-reference-card">Quick Reference Card<a class="headerlink" href="#quick-reference-card" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Pin Quick Reference</p>
+<div class="highlight"><pre><span></span><code>VCC: 4-12V DC power input
+GND: Ground reference (0V)
+FILTERED_OUT: Main analog output (recommended)
+RAW_OUT: Unfiltered full-bandwidth output
+PRE_AMP: Low-amplitude pre-amplification signal
+</code></pre></div>
+</div>
+<hr />
+<p><em>Need wiring help? Check our <a href="https://www.youtube.com/@EdgeNeuron">video tutorials</a> or <a href="../troubleshooting/">troubleshooting guide</a>.</em></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Edge-Neuron" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@EdgeNeuron" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/profile.php?id=61582047675688" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/kaush_sound" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0-.6 230 115 115 0 1 0 .6-230m-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1-.6-149.2m93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1-53.6 0m129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
