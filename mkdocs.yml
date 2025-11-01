@@ -88,13 +88,13 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/yourusername
+      link: https://github.com/Edge-Neuron
     - icon: fontawesome/brands/youtube
-      link: https://youtube.com/channel/YOUR_CHANNEL_ID
+      link: https://www.youtube.com/@EdgeNeuron
     - icon: fontawesome/brands/facebook
-      link: https://facebook.com/yourpage
+      link: https://www.facebook.com/profile.php?id=61582047675688
     - icon: fontawesome/brands/instagram
-      link: https://instagram.com/yourprofile
+      link: https://www.instagram.com/kaush_sound
 
 extra_css:
   - stylesheets/extra.css

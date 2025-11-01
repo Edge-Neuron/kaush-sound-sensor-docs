@@ -59,10 +59,11 @@ Select your preferred microcontroller platform. Each has its advantages:
 - Web-based control possible
 
 #### Option C: Raspberry Pi (Advanced Features)
-![Raspberry Pi Setup](images/connections/raspberry-pi-complete.jpg)
-*Raspberry Pi setup for advanced signal processing*
+
 
 **Advantages:**
+
+
 - Linux-based advanced processing
 - Multiple communication interfaces
 - Can run desktop application directly
@@ -126,12 +127,16 @@ Or 9V Battery → Arduino VIN Pin
 
 
 **Method 1: Arduino IDE Library Manager**
+
+
 1. Open Arduino IDE
 2. Go to `Sketch → Include Library → Manage Libraries`
 3. Search for "Kaush Sound Sensor"
 4. Click Install
 
 **Method 2: Manual Installation**
+
+
 1. Download library ZIP from GitHub
 2. Go to `Sketch → Include Library → Add .ZIP Library`
 3. Select downloaded ZIP file
@@ -139,10 +144,10 @@ Or 9V Battery → Arduino VIN Pin
 
 ### Step 6: Upload Test Code
 
-![Code Upload](images/software/code-upload.jpg)
-*Uploading test code to Arduino Nano*
 
 **Basic Test Code:**
+
+
 1. Open Arduino IDE
 2. Go to `File → Examples → Kaush Sound Sensor → BasicTest`
 3. Select correct board: `Tools → Board → Arduino Nano`
@@ -189,7 +194,7 @@ Noisy Environment:
 !!! video "Complete Setup Guide"
     Watch our comprehensive setup tutorial covering all steps:
 
-[![Getting Started Tutorial](images/videos/getting-started-thumbnail.jpg)](https://youtube.com/watch?v=YOUR_GETTING_STARTED_VIDEO_ID)
+[![Getting Started Tutorial](images/videos/thumbnail.PNG)](https://youtube.com/@EdgeNeuron)
 
 ## Potential First-Time Issues
 

@@ -47,12 +47,13 @@ We welcome contributions! Please see our contributing guidelines:
 ## Contact Information
 
 **Edge Neuron Technologies**
-- Website: https://edge-neuron.com
-- Email: info@edge-neuron.com
-- Support: support@edge-neuron.com
-- Business: business@edge-neuron.com
+
+
+- Website: https://robu.in/product/kaush-sound-sensor
+- Email: kalpruh.communication@gmail.com
+
 
 **Social Media**
 - YouTube: Edge Neuron
-- GitHub: @yourusername
+- GitHub: @Edge-Neuron
 - LinkedIn: Edge Neuron Technologies

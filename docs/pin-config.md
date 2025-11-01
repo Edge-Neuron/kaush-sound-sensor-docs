@@ -22,7 +22,6 @@ The Kaush Sound Sensor v1.0 features a compact 8-pin interface that provides max
 #### GND (Ground Reference)
 - **Function**: 0V reference and return path
 - **Connection**: Must connect to microcontroller ground
-- **Wire Color**: Black wire by convention
 - **Important**: Single ground point recommended
 
 ### Signal Output Pins
@@ -238,17 +237,7 @@ void loop() {
 }
 ```
 
-### External Amplification Setup
 
-
-#### High-Gain Configuration
-```
-Kaush PRE_AMP → Op-Amp Non-Inverting Input
-               Op-Amp Output → Arduino A0
-               
-Gain = 1 + (Rf/Ri)
-For 100x gain: Rf = 99kΩ, Ri = 1kΩ
-```
 
 
 ## Signal Analysis Connections

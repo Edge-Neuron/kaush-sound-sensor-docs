@@ -5,127 +5,6 @@
 Before diving into specific issues, use these quick diagnostic methods to identify the problem category.
 
 
-### Basic Health Check
-
-```cpp
-// Quick sensor health check code
-#include "KaushSoundSensor.h"
-
-KaushSoundSensor sensor(A0);
-
-void setup() {
-  Serial.begin(115200);
-  sensor.begin(5.0);
-  
-  Serial.println("=== KAUSH SENSOR HEALTH CHECK ===");
-  
-  // Basic connectivity test
-  testBasicReading();
-  
-  // Power supply test
-  testPowerSupply();
-  
-  // Signal response test
-  testSignalResponse();
-  
-  // Baseline stability test
-  testBaselineStability();
-  
-  Serial.println("=== HEALTH CHECK COMPLETE ===");
-}
-
-void testBasicReading() {
-  Serial.print("Basic Reading Test: ");
-  float reading = sensor.readFiltered();
-  
-  if (reading > 0 && reading < 6.0) {
-    Serial.println("PASS");
-  } else {
-    Serial.print("FAIL - Reading: ");
-    Serial.println(reading);
-  }
-}
-
-void testPowerSupply() {
-  Serial.print("Power Supply Test: ");
-  float baseline = sensor.readFilteredAverage(50);
-  float expected = sensor.getVoltageReference() / 2.0;
-  float error = abs(baseline - expected) / expected;
-  
-  if (error < 0.1) { // 10% tolerance
-    Serial.println("PASS");
-  } else {
-    Serial.print("FAIL - Baseline: ");
-    Serial.print(baseline);
-    Serial.print("V (Expected: ");
-    Serial.print(expected);
-    Serial.println("V)");
-  }
-}
-
-void testSignalResponse() {
-  Serial.print("Signal Response Test: ");
-  Serial.println("Tap sensor or make sound...");
-  
-  float baseline = sensor.readFilteredAverage(10);
-  float maxDeviation = 0;
-  
-  // Monitor for 3 seconds
-  for (int i = 0; i < 300; i++) {
-    float reading = sensor.readFiltered();
-    float deviation = abs(reading - baseline);
-    if (deviation > maxDeviation) {
-      maxDeviation = deviation;
-    }
-    delay(10);
-  }
-  
-  if (maxDeviation > 0.05) { // 50mV minimum response
-    Serial.println("PASS");
-  } else {
-    Serial.print("FAIL - Max deviation: ");
-    Serial.println(maxDeviation * 1000);
-    Serial.println("mV");
-  }
-}
-
-void testBaselineStability() {
-  Serial.print("Baseline Stability Test: ");
-  
-  float readings[100];
-  for (int i = 0; i < 100; i++) {
-    readings[i] = sensor.readFiltered();
-    delay(10);
-  }
-  
-  // Calculate standard deviation
-  float mean = 0;
-  for (int i = 0; i < 100; i++) {
-    mean += readings[i];
-  }
-  mean /= 100;
-  
-  float variance = 0;
-  for (int i = 0; i < 100; i++) {
-    variance += pow(readings[i] - mean, 2);
-  }
-  variance /= 100;
-  float stdDev = sqrt(variance);
-  
-  if (stdDev < 0.01) { // 10mV stability
-    Serial.println("PASS");
-  } else {
-    Serial.print("FAIL - Std Dev: ");
-    Serial.print(stdDev * 1000);
-    Serial.println("mV");
-  }
-}
-
-void loop() {
-  // Run health check once
-  delay(1000);
-}
-```
 
 ## Hardware Issues
 
@@ -137,11 +16,15 @@ void loop() {
 #### Issue: No Response from Sensor
 
 **Symptoms:**
+
+
 - No serial output from microcontroller
 - Sensor readings always 0V or VCC
 - Potentiometers have no effect
 
 **Diagnostic Steps:**
+
+
 1. **Voltage Measurement**: Use multimeter to check VCC pin
 2. **Ground Continuity**: Verify ground connections
 3. **Current Draw**: Measure total current (should be 4-15mA)
@@ -150,7 +33,7 @@ void loop() {
 
 | Cause | Symptoms | Solution |
 |-------|----------|----------|
-| **No Power** | 0V at VCC pin | Check power connections, fuses |
+| **No Power** | 0V at VCC pin | Check power connections |
 | **Reverse Polarity** | No current draw | Check VCC/GND polarity |
 | **Insufficient Voltage** | Erratic behavior | Ensure 4V+ supply |
 | **Poor Connections** | Intermittent operation | Re-solder connections |
@@ -197,20 +80,10 @@ public:
 };
 
 MovingAverage filter;
-float filteredReading = filter.update(sensor.readFiltered());
+float filteredReading = filter.update(sensor.readSample(uint8_t channelIndex));
 ```
 
-3. **Grounding Issues:**
-```cpp
-void checkGroundLoop() {
-  // Check for ground loops by measuring with different ground points
-  Serial.println("Ground Loop Test:");
-  
-  // Take readings with different ground connections
-  // All readings should be very similar
-  // Large differences indicate ground loop problems
-}
-```
+
 
 ### Connection Problems
 
@@ -232,7 +105,7 @@ void testConnections() {
   Serial.println("Connection Test - Wiggle wires during test");
   
   for (int i = 0; i < 100; i++) {
-    float reading = sensor.readFiltered();
+    float reading = sensor.readSample(uint8_t channelIndex);
     
     // Check for sudden jumps (bad connection indicator)
     static float lastReading = reading;
@@ -261,7 +134,7 @@ void assessWireQuality() {
   unsigned long startTime = micros();
   
   for (int i = 0; i < 1000; i++) {
-    readings[i] = sensor.readFiltered();
+    readings[i] = sensor.readSample(uint8_t channelIndex);
     delayMicroseconds(500); // 2kHz sampling
   }
   
@@ -319,60 +192,12 @@ void assessWireQuality() {
 #### Issue: Microphone Problems
 
 **Symptoms:**
+
+
 - Very low sensitivity
 - Distorted audio at normal levels
 - Frequency response issues
 - Physical damage visible
-
-**Microphone Testing:**
-```cpp
-void testMicrophoneSensitivity() {
-  Serial.println("Microphone Sensitivity Test:");
-  Serial.println("Test different sound levels...");
-  
-  float quietLevel = 0, normalLevel = 0, loudLevel = 0;
-  
-  // Quiet test (background noise)
-  Serial.println("1. Keep environment QUIET for 5 seconds...");
-  delay(2000);
-  quietLevel = sensor.readRMS(5000); // 5 second RMS
-  
-  // Normal speech test
-  Serial.println("2. Speak normally at 30cm distance for 5 seconds...");
-  delay(2000);
-  normalLevel = sensor.readRMS(5000);
-  
-  // Loud test
-  Serial.println("3. Speak loudly or clap hands for 5 seconds...");
-  delay(2000);
-  loudLevel = sensor.readRMS(5000);
-  
-  // Results
-  Serial.print("Quiet level: "); Serial.print(quietLevel * 1000, 1); Serial.println("mV RMS");
-  Serial.print("Normal level: "); Serial.print(normalLevel * 1000, 1); Serial.println("mV RMS");
-  Serial.print("Loud level: "); Serial.print(loudLevel * 1000, 1); Serial.println("mV RMS");
-  
-  // Signal-to-noise ratio
-  float snr = 20 * log10(normalLevel / quietLevel);
-  Serial.print("Signal-to-Noise Ratio: "); Serial.print(snr, 1); Serial.println("dB");
-  
-  // Dynamic range
-  float dynamicRange = 20 * log10(loudLevel / quietLevel);
-  Serial.print("Dynamic Range: "); Serial.print(dynamicRange, 1); Serial.println("dB");
-  
-  // Assessment
-  if (snr > 20 && dynamicRange > 40) {
-    Serial.println("Microphone Status: EXCELLENT");
-  } else if (snr > 15 && dynamicRange > 30) {
-    Serial.println("Microphone Status: GOOD");
-  } else if (snr > 10 && dynamicRange > 20) {
-    Serial.println("Microphone Status: FAIR");
-  } else {
-    Serial.println("Microphone Status: POOR - Check for damage");
-  }
-}
-```
-
 
 
 

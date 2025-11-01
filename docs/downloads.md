@@ -13,8 +13,8 @@
 ## Hardware Files
 
 ### 3D Models
-- **STEP File**: [Download 3D Model](files/downloads/kaush-sensor-3d-model.step)
-- **STL Files**: [Download for 3D Printing](files/downloads/kaush-sensor-enclosure.zip)
+- **STEP File**: [Download 3D Model](files/downloads/kaush-sensor-3d-model.zip)
+
 
 ### Datasheets
 - **Kaush Sound Sensor Datasheet**: [PDF Download](files/datasheets/kaush-sound-sensor-v1.0-datasheet.pdf)
