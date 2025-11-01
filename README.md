@@ -1,2 +1,2 @@
 # kaush-sound-sensor-docs
-Complete documentation for Kaush Sound Sensor v1.0 - Go to docs.kalpruh.com
+Complete documentation for Kaush Sound Sensor v1.0 - Go to [Kaush Documentation Site](https://docs.kaush.kalpruh.com)
