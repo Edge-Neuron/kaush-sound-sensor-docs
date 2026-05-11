@@ -2,11 +2,11 @@
 site_name: Kaush Sound Sensor v1.0 Documentation
 site_description: Complete guide for professional audio acquisition sensor
 site_author: Edge Neuron
-site_url: https://yourusername.github.io/kaush-sound-sensor-docs/
+site_url: https://docs.kaush.kalpruh.com
 
 # Repository information
 repo_name: Edge-Neuron/kaush-sound-sensor-docs
-repo_url: https://docs.kalpruh.com
+repo_url: https://github.com/Edge-Neuron/kaush-sound-sensor-docs
 edit_uri: edit/main/docs/
 
 # Navigation
